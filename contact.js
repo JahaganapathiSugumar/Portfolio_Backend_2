@@ -6,7 +6,7 @@ dotenv.config();
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-  const { name, email, phone, message } = req.body;
+  const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Name, email, and message are required.' });
@@ -29,7 +29,6 @@ router.post('/', async (req, res) => {
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Message:</strong><br>${message}</p>
       `
     };
